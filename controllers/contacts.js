@@ -25,10 +25,7 @@ const getById = async (req, res, next) => {
 
 const addContact = async (req, res, next) => {
     try {
-        const contactName = await contacts.addContact(req.body);
-
-        res.status(201).json('Hello ' + contactName.name + ' ' + contactName.surname );
-        // "Hello <name> <surname>"
+        res.status(201).json('Done');
     } catch (e) {
         if(e.message.includes('duplicate')){
             e.status = 400
